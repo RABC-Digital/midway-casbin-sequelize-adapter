@@ -7,7 +7,7 @@
   "scripts": {
     "build": "cross-env midway-bin build -c",
     "test": "cross-env midway-bin test --ts  --runInBand",
-    "cov": "cross-env midway-bin cov --ts",
+    "cov": "cross-env midway-bin cov --ts --runInBand",
     "lint": "mwts check",
     "lint:fix": "mwts fix"
   },

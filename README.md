@@ -33,7 +33,7 @@ export class MainConfiguration {
 }
 ```
 
-配置适配器，下面以 sqlite 存储为例，mysql 的配置可以查看 typeorm 组件。
+配置适配器，下面以 sqlite 存储为例，mysql 的配置可以查看 sequelize 组件。
 
 ```typescript
 import { MidwayAppInfo } from '@midwayjs/core';
