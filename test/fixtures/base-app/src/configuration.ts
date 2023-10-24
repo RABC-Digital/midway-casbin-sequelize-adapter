@@ -7,17 +7,10 @@ import { Enforcer } from 'casbin';
 import { SequelizeAdapter } from '../../../../src';
 
 @Configuration({
-  imports: [
-    koa,
-    sequelize,
-    casbin
-  ],
-  importConfigs: [
-    join(__dirname, 'config')
-  ]
+  imports: [koa, sequelize, casbin],
+  importConfigs: [join(__dirname, 'config')],
 })
 export class MainConfiguration {
-
   @App('koa')
   app: koa.Application;
 
@@ -30,9 +23,12 @@ export class MainConfiguration {
     e['fs'] = require('fs');
     await e.initWithFile(
       join(__dirname, '../basic_model.conf'),
-      join(__dirname, '../basic_policy.csv'),
+      join(__dirname, '../basic_policy.csv')
     );
-    const adapter = new SequelizeAdapter(this.sequelizeDataSourceManager.getDataSource('node-casbin-official'), {});
+    const adapter = new SequelizeAdapter(
+      this.sequelizeDataSourceManager.getDataSource('node-casbin-official'),
+      {}
+    );
     await adapter.savePolicy(e.getModel());
   }
 
