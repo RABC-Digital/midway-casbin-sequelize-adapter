@@ -43,7 +43,7 @@ import { CasbinRule, createAdapter } from 'midway-casbin-sequelize-adapter';
 export default (appInfo: MidwayAppInfo) => {
   return {
     // ...
-    typeorm: {
+    sequelize: {
       dataSource: {
         // 为 casbin 定义了一个连接
         'node-casbin-official': {
